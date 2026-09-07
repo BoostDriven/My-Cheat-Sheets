@@ -1,0 +1,73 @@
+PYTHON NEW PROJECT SETUP
+------------------------------------------------------------------------
+--create project directory
+$ mkdir project_template
+
+
+--change directory
+$ cd project_template
+
+
+--initialize new git repo
+$ git init
+
+
+--create directory for submodules
+$ mkdir submodules
+
+
+--change directory
+$ cd submodules
+
+
+--clone a repo as submodule
+$ git submodule add https://ngicnatgen@dev.azure.com/ngicnatgen/Data%20Services/_git/NGBI.Py.DevCoreUtils
+
+
+--traverse back one directory to main repo
+cd ..
+
+
+--set package repository as trusted host
+$ pip config set global.trusted-host r-packages.ngic.com
+
+
+--set internal global package repository
+$ pip config set global.index-url https://r-packages.ngic.com/ngic-pypi/latest/simple 
+
+
+--install pipenv
+$ pip install pipenv
+
+
+--create/activate a virtual environment
+$ pipenv shell
+
+
+--deactivate virtual environment
+$ exit || deactivate
+
+
+--install submodule in virtual environment
+$ pip install submodules/NGBI.Py.DevCoreUtils
+$ pip install -e submodules/NGBI.Py.DevCoreUtils(edit mode)
+
+
+--install ipython
+$ pip install ipython
+
+
+--install pywin32, needed for DecCoreUtils submodule
+$ pip install pywin32 
+
+
+--launch ipython interpreter
+$ ipython
+
+
+--import encode function from submodule
+[1]: from ngbi_utils.secret import encode
+
+
+--test the encode function from submodule
+encode('test')

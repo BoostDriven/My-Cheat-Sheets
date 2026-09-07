@@ -1,0 +1,36 @@
+GIT NEW REPOSITORY SETUP
+------------------------------------------------------------------------
+--GET CURRENT GIT EXECUTABLE LOCATION
+$ where git
+
+--CLONE REPOSITORY
+$ git clone https://ngicnatgen@dev.azure.com/ngicnatgen/Data%20Services/_git/NGBI.CDS.EADM
+
+--CLONE SPECIFIC REMOTE BRANCH
+$ git clone -b <branch-name> <repository-url>
+
+$ cd NGBI.CDS.EADM\
+
+$ git remote
+$ git remote -v
+$ git remote set-url origin [url]
+git 
+$ git branch
+$ git branch -a || -r
+$ git branch -v
+
+--"-b" creates a new branch and automatically switches 
+$ git switch -c new-branch || git checkout -b dev 
+
+
+COPY PROJECT FILES IN NEW REPO
+------------------------------------------------------------------------
+$ git add .
+$ git commit -m "initial commit"
+$ git push -u origin dev
+
+
+
+SET LOCAL BRANCH UPSTREAM TO SPECIFIC BRANCH
+------------------------------------------------------------------------
+$ git branch --set-upstream-to=origin/sync
